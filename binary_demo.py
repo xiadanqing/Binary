@@ -18,7 +18,7 @@ class Processing():
     def _feature_eng(self,train,test):
         features = ['pkgname', 'ver', 'adunitshowid', 'mediashowid', 'apptype', 'adidmd5', 'imeimd5', 'ip','macmd5', 'openudidmd5',
             'reqrealip', 'city', 'province', 'idfamd5', 'dvctype', 'model', 'make', 'ntt',
-            'carrier', 'os', 'osv', 'orientation', 'lan', 'h', 'w', 'ppi','hour']
+            'carrier', 'os', 'osv', 'orientation', 'lan', 'h', 'w', 'ppi']
         train_test = pd.concat([train, test], ignore_index=True,sort=True)
         train_test['label'] = train_test['label'].fillna(-1).astype(int)
         train_test['time'] = pd.to_datetime(train_test['nginxtime'] , unit='ms')
