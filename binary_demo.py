@@ -23,6 +23,7 @@ class Processing():
         train_test['label'] = train_test['label'].fillna(-1).astype(int)
         train_test['time'] = pd.to_datetime(train_test['nginxtime'] , unit='ms')
         train_test['hour'] = train_test['time'].dt.hour.astype('str')
+        train_test.fillna('null_value',inplace = True)
         features.append('hour')
         new_test = train_test[train_test['label'] == -1]
         new_train = train_test[train_test['label'] != -1]
@@ -38,7 +39,7 @@ class TrainModels():
         judge_cheat_sid = set()
         judge_features = list(blacklist_dic.keys())
         judge_df = test[judge_features+['sid']]
-        judge_df['label_blacklist'] = [0]*len(judge_df)
+        judge_df['label'] = [0]*len(judge_df)
         for f in judge_features:
             s = blacklist_dic[f]
             judge_df['label'] = judge_df.apply(lambda x: 1 if (x[f] in s or x['label'] == 1) else 0,axis=1)
@@ -57,8 +58,9 @@ class TrainModels():
         judge_df['label'] = judge_df['label'].apply(lambda x: 1 if x>=0.5 else 0)
         return judge_df[['sid','label']]
     
-
-  if __name__ == "__main__":
+    
+    
+if __name__ == "__main__":
     train = pd.read_table('round1_iflyad_anticheat_traindata.txt')
     test = pd.read_table('round1_iflyad_anticheat_testdata_feature.txt')    
     proce_module = Processing()
@@ -69,6 +71,7 @@ class TrainModels():
     judge_by_blackList.to_csv('judge_by_blackList.csv',index=False,encoding='utf-8')
     #二分类---使用catboost
     new_train,new_test,features= proce_module._feature_eng(train,test)
+    print('ok')
     judge_by_catboost = model_module._judge_catboost(new_train,new_test,features)   
     judge_by_catboost.to_csv('judge_by_catboost.csv',index=False,encoding='utf-8')
 
