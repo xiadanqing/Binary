@@ -68,7 +68,7 @@ class TrainModels():
     judge_by_blackList = model_module._judge_black(blacklist_dic,test)
     judge_by_blackList.to_csv('judge_by_blackList.csv',index=False,encoding='utf-8')
     #二分类---使用catboost
-    new_train,new_test,features= proce_module._feature_eng(self,train,test)
+    new_train,new_test,features= proce_module._feature_eng(train,test)
     judge_by_catboost = model_module._judge_catboost(new_train,new_test,features)   
     judge_by_catboost.to_csv('judge_by_catboost.csv',index=False,encoding='utf-8')
 
