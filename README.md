@@ -11,8 +11,7 @@
 GBDT模型相关参考资料整理：
 1、GBDT与xgboost对比：https://wenku.baidu.com/view/f3da60b4951ea76e58fafab069dc5022aaea463e.html
 
-2、catboost论文：（1）https://arxiv.org/pdf/1706.09516.pdf
-                （2）http://learningsys.org/nips17/assets/papers/paper_11.pdf
+2、catboost论文：（1）https://arxiv.org/pdf/1706.09516.pdf （2）http://learningsys.org/nips17/assets/papers/paper_11.pdf
 
 
 
