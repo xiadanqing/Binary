@@ -8,11 +8,14 @@
 第二版：通过catboost(使用0.15版本的catboost，不支持0.12版本)做个简单的二分类来判断是否作弊，提交后得分为：94.33074
 
 
-小贴士：
-大家在本地算力不够的情况下，可以考虑通过 Baidu AI Studio 平台的算力来辅助自己训练模型，它们 最近 在做活动，可以 免费领取 一部分 算力，亲身试验，效果不错。下面 为 我的三个 验证 邀请码，（大家使用这些邀请码后，我也可以相应获得一些免费的算力奖励。。。欢迎大家使用。。。）
+GBDT模型相关参考资料整理：
+1、GBDT与xgboost对比：https://wenku.baidu.com/view/f3da60b4951ea76e58fafab069dc5022aaea463e.html
 
-三个算力卡邀请码：a1ecdf2e51f843e98ccd82be36409db4，73827b2cba3d441eb8b5f4212fe64a0e，9e1180be8348461584e4d1dbb6fcd468
+2、catboost论文：（1）https://arxiv.org/pdf/1706.09516.pdf
+                （2）http://learningsys.org/nips17/assets/papers/paper_11.pdf
 
-AI Studio的官网链接如下：
-https://aistudio.baidu.com/aistudio/coupon/manage/inviteCode
+
+
+
+
 
