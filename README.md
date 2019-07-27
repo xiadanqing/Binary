@@ -10,7 +10,7 @@
 
 GBDT模型相关参考资料整理：
 
-1、GBDT与xgboost对比：
+1、GBDT、xgboost、lightgbm对比分析：
 
 https://wenku.baidu.com/view/f3da60b4951ea76e58fafab069dc5022aaea463e.html
 
